@@ -1,0 +1,254 @@
+/* Base styles */
+:root {
+    --sidebar-width-lg: 16.66667%;  /* col-lg-2 */
+    --sidebar-width-md: 25%;        /* col-md-3 */
+    --content-max-width: 860px;
+    --header-height: 70px;
+    --border-color: #dee2e6;
+    --text-color: #333;
+    --link-color: #007bff;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    margin: 0;
+}
+
+/* Layout */
+.container-fluid {
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+}
+
+.page-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: calc(100vh - 4rem);
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Important for Firefox */
+}
+
+.card-body {
+    flex: 1;
+    min-height: 0; /* Important for Firefox */
+}
+
+/* Header */
+.card-header {
+    padding: 1.25rem 1.5rem;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Content area */
+.content-wrapper {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#content {
+    padding: 1.5rem 0;
+}
+
+/* Typography */
+#content h2 {
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#content h2:first-child {
+    margin-top: 0;
+}
+
+#content h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#content h4 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#content p {
+    margin-bottom: 1.2rem;
+}
+
+#content ul, #content ol {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+    padding-right: 0;
+    background-color: transparent;
+}
+
+.sidebar-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Navigation */
+.nav {
+    --nav-indent: 1rem;
+    --nav-spacing: 0.25rem;
+    --nav-indicator-width: 3px;
+}
+
+.nav-link {
+    position: relative;
+    padding: var(--nav-spacing) var(--nav-indent);
+    color: var(--text-color);
+    transition: color 0.2s ease;
+    border-left: var(--nav-indicator-width) solid transparent;
+    margin: 1px 0;
+}
+
+.nav-link:hover {
+    color: var(--link-color);
+}
+
+.nav-link.active {
+    color: var(--link-color);
+    border-left-color: var(--link-color);
+}
+
+/* Main navigation */
+.sidebar .nav-link {
+    font-size: 1rem;
+    padding: 0.4rem var(--nav-indent);
+}
+
+/* Table of contents */
+#toc {
+    margin: 0;
+    padding: 0;
+}
+
+#toc .nav-link {
+    font-size: 0.9rem;
+    color: #666;
+    background-color: var(--bg-light);
+}
+
+#toc .nav-link:hover {
+    color: #666;
+    background-color: #f0f0f0;
+}
+
+#toc .nav-link.active {
+    color: #666;
+    background-color: #f0f0f0;
+    border-left-color: #6c757d;
+}
+
+/* Remove Bootstrap nav defaults */
+.nav-pills .nav-link {
+    border-radius: 0;
+}
+
+.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide empty nav items */
+.nav-item:empty,
+.nav-link:empty {
+    display: none;
+}
+
+/* Main content area */
+main {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .page-wrapper {
+        height: calc(100vh - 2rem);
+    }
+
+    .card {
+        min-height: 0;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    main {
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .content-wrapper {
+        padding: 0 0.75rem;
+    }
+
+    #content {
+        font-size: 1rem;
+    }
+
+    #content h2 {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+
+    #content h3 {
+        font-size: 1.3rem;
+    }
+
+    #content h4 {
+        font-size: 1.1rem;
+    }
+}
+
+.card-header h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+} 
